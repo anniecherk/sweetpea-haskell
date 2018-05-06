@@ -1,4 +1,6 @@
-SweetPea is a language for declaratively specifying randomized experimental designs, and a runtime for synthesizing trial sequences generated from the design specification; this prototype that is targeted at psychology and neuroscience experiments. 
+### Disclaimer! Currently mid-refactor, this code doesn't work
+
+SweetPea is a language for declaratively specifying randomized experimental designs, and a runtime for synthesizing trial sequences generated from the design specification; this prototype that is targeted at psychology and neuroscience experiments.
 
 An experimental design is a description of experimental factors, relationships between factors, sequential constraints, and how to map those factors onto a sequence of trials. The reliability and validity of experimental results heavily relies on rigorous experimental design.
 
@@ -16,23 +18,17 @@ Grab [stack](https://docs.haskellstack.org/en/stable/README/) if you don't alrea
 
 Grab the repo:
 
-`git clone https://github.com/anniecherk/sweetpea`
-
-`cd sweetpea`
-
-Let stack handle all the dependencies:
-
-`stack install`
-
-Build it:
-
-`stack build`
+```
+git clone https://github.com/anniecherk/sweetpea-haskell
+cd sweetpea-haskell/
+git submodule init
+git submodule update
+```
 
 ## Run an example
 
 `./run_example.sh`
 
-This will run the small example Stroop experiment in app/ExperimentToRun.hs, and print the generated sequence of trials to the console. 
+This will run the small example Stroop experiment in app/ExperimentToRun.hs, and print the generated sequence of trials to the console.
 
 Note: you currently need to install crytominisat- this project plans to eventually rely upon Unigen, but currently uses cryptominisat, which is the solver Unigen uses. You can install it [here](https://github.com/msoos/cryptominisat).
-
